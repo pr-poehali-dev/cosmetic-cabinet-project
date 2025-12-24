@@ -109,22 +109,6 @@ const Index = () => {
       experience: "15 лет",
       education: "РНИМУ им. Н.И. Пирогова",
       specialization: "Аппаратная косметология"
-    },
-    {
-      id: 2,
-      name: "Анна Петрова",
-      position: "Врач-дерматолог",
-      experience: "10 лет",
-      education: "Первый МГМУ им. И.М. Сеченова",
-      specialization: "Лазерные технологии"
-    },
-    {
-      id: 3,
-      name: "Мария Соколова",
-      position: "Врач-косметолог",
-      experience: "8 лет",
-      education: "РУДН",
-      specialization: "Омолаживающие процедуры"
     }
   ];
 
@@ -489,15 +473,15 @@ const Index = () => {
       <section id="specialists" className="py-20 px-4 bg-white">
         <div className="container mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <Badge variant="outline" className="mb-4">Наша команда</Badge>
+            <Badge variant="outline" className="mb-4">Главный врач</Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Опытные специалисты
+              Опытный специалист
             </h2>
             <p className="text-lg text-muted-foreground">
-              Врачи высшей категории с международными сертификатами
+              Врач высшей категории с международными сертификатами
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="flex justify-center">
             {specialists.map((specialist) => (
               <Card key={specialist.id} className="text-center hover-scale">
                 <CardHeader>
