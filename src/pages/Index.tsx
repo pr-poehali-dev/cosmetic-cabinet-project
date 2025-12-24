@@ -90,7 +90,7 @@ const Index = () => {
     {
       id: 1,
       name: "Екатерина Волкова",
-      position: "Главный врач-косметолог",
+      position: "Врач-косметолог",
       experience: "15 лет",
       education: "РНИМУ им. Н.И. Пирогова",
       specialization: "Аппаратная косметология"

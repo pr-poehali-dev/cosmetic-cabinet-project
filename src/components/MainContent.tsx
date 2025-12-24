@@ -136,9 +136,9 @@ const MainContent = ({ services, equipment, specialists, results, reviews }: Mai
       <section id="specialists" className="py-20 px-4 bg-white">
         <div className="container mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <Badge variant="outline" className="mb-4">Главный врач</Badge>
+            <Badge variant="outline" className="mb-4">Наш специалист</Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Опытный специалист
+              Опытный врач-косметолог
             </h2>
             <p className="text-lg text-muted-foreground">
               Врач высшей категории с международными сертификатами
