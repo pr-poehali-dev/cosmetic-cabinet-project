@@ -368,13 +368,9 @@ const Index = () => {
                 Смотреть видео
               </Button>
             </div>
-            <div className="grid grid-cols-3 gap-8 pt-12 max-w-2xl mx-auto">
+            <div className="grid grid-cols-2 gap-8 pt-12 max-w-xl mx-auto">
               <div>
-                <div className="text-4xl font-bold text-primary">15+</div>
-                <div className="text-sm text-muted-foreground mt-1">лет опыта</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-primary">5000+</div>
+                <div className="text-4xl font-bold text-primary">1000+</div>
                 <div className="text-sm text-muted-foreground mt-1">довольных клиентов</div>
               </div>
               <div>
