@@ -133,25 +133,33 @@ const Index = () => {
       id: 1,
       procedure: "RF-лифтинг",
       description: "Лифтинг овала лица",
-      sessions: "4 процедуры"
+      sessions: "4 процедуры",
+      image: "https://cdn.poehali.dev/projects/cc1323fe-6110-4559-908b-c86b07001c63/files/ac38e3d3-3d64-4ee2-8c0c-c4ab39d91de2.jpg",
+      result: "Подтяжка овала лица, уменьшение носогубных складок"
     },
     {
       id: 2,
       procedure: "Лазерная биоревитализация",
       description: "Улучшение текстуры кожи",
-      sessions: "3 процедуры"
+      sessions: "3 процедуры",
+      image: "https://cdn.poehali.dev/projects/cc1323fe-6110-4559-908b-c86b07001c63/files/3b5e1c0e-df1e-4be8-901f-479fa958b560.jpg",
+      result: "Сияние кожи, выравнивание тона, уменьшение морщин"
     },
     {
       id: 3,
       procedure: "Криолиполиз",
       description: "Коррекция области живота",
-      sessions: "2 процедуры"
+      sessions: "2 процедуры",
+      image: "https://cdn.poehali.dev/projects/cc1323fe-6110-4559-908b-c86b07001c63/files/663f7f05-8be3-49c6-8500-9f338d2d8866.jpg",
+      result: "Уменьшение объёмов на 4-6 см, подтянутый силуэт"
     },
     {
       id: 4,
       procedure: "LED-терапия",
       description: "Лечение акне",
-      sessions: "6 процедур"
+      sessions: "6 процедур",
+      image: "https://cdn.poehali.dev/projects/cc1323fe-6110-4559-908b-c86b07001c63/files/216daa08-97ad-43cf-9fab-247f81712742.jpg",
+      result: "Чистая кожа, уменьшение воспалений на 80%"
     }
   ];
 
@@ -544,18 +552,28 @@ const Index = () => {
               Реальные результаты наших клиентов
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 gap-8">
             {results.map((result) => (
-              <Card key={result.id} className="overflow-hidden hover-scale">
-                <div className="aspect-square bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
-                  <Icon name="Image" size={48} className="text-muted-foreground" />
+              <Card key={result.id} className="overflow-hidden hover-scale group">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img 
+                    src={result.image} 
+                    alt={result.procedure}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute top-4 right-4">
+                    <Badge className="gradient-bg text-white border-0">
+                      {result.sessions}
+                    </Badge>
+                  </div>
                 </div>
                 <CardHeader>
-                  <CardTitle className="text-lg">{result.procedure}</CardTitle>
-                  <CardDescription>{result.description}</CardDescription>
-                  <Badge variant="outline" className="mt-2 w-fit">
-                    {result.sessions}
-                  </Badge>
+                  <CardTitle className="text-xl">{result.procedure}</CardTitle>
+                  <CardDescription className="text-base">{result.description}</CardDescription>
+                  <div className="flex items-start gap-2 mt-3 pt-3 border-t">
+                    <Icon name="CheckCircle2" size={20} className="text-primary mt-0.5 flex-shrink-0" />
+                    <p className="text-sm font-medium text-foreground">{result.result}</p>
+                  </div>
                 </CardHeader>
               </Card>
             ))}
