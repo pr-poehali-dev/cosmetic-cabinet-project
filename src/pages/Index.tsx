@@ -7,6 +7,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Slider } from "@/components/ui/slider";
 import Icon from "@/components/ui/icon";
 import { toast } from "sonner";
 
@@ -17,12 +19,15 @@ const Index = () => {
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
 
+  const [calculatorServices, setCalculatorServices] = useState<{[key: number]: {selected: boolean, sessions: number}}>({});
+
   const services = [
     {
       id: 1,
       title: "Лазерная биоревитализация",
       description: "Инновационная процедура омоложения без инъекций",
       price: "от 8 500 ₽",
+      basePrice: 8500,
       duration: "60 мин",
       icon: "Sparkles"
     },
@@ -31,6 +36,7 @@ const Index = () => {
       title: "RF-лифтинг лица",
       description: "Подтяжка кожи радиочастотами без операции",
       price: "от 12 000 ₽",
+      basePrice: 12000,
       duration: "90 мин",
       icon: "Zap"
     },
@@ -39,6 +45,7 @@ const Index = () => {
       title: "Ультразвуковая чистка",
       description: "Глубокое очищение пор ультразвуком",
       price: "от 5 500 ₽",
+      basePrice: 5500,
       duration: "45 мин",
       icon: "Droplets"
     },
@@ -47,6 +54,7 @@ const Index = () => {
       title: "Микротоковая терапия",
       description: "Стимуляция мышц и улучшение тонуса кожи",
       price: "от 6 500 ₽",
+      basePrice: 6500,
       duration: "50 мин",
       icon: "Activity"
     },
@@ -55,6 +63,7 @@ const Index = () => {
       title: "Криолиполиз",
       description: "Безоперационное удаление жировых отложений",
       price: "от 15 000 ₽",
+      basePrice: 15000,
       duration: "120 мин",
       icon: "Snowflake"
     },
@@ -63,6 +72,7 @@ const Index = () => {
       title: "LED-терапия",
       description: "Светолечение для омоложения и лечения акне",
       price: "от 4 000 ₽",
+      basePrice: 4000,
       duration: "30 мин",
       icon: "Sun"
     }
